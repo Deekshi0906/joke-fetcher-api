@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laugh Factory 😄 | Random Joke Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>😄 Laugh Factory</h1>
+            <p>Get your daily dose of laughter!</p>
+        </header>
+
+        <div class="joke-container">
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="spinner"></div>
+                <p>Loading a hilarious joke...</p>
+            </div>
+
+            <!-- Joke Display -->
+            <div class="joke-card" id="jokeCard">
+                <div class="joke-type" id="jokeType">Programming</div>
+                <div class="joke-setup" id="jokeSetup">Why do programmers prefer dark mode?</div>
+                <div class="joke-punchline" id="jokePunchline">Because light attracts bugs! 🐛</div>
+                <div class="joke-actions">
+                    <button class="action-btn" id="revealBtn">
+                        <i class="fas fa-laugh"></i> Reveal Punchline
+                    </button>
+                    <button class="action-btn" id="copyBtn">
+                        <i class="fas fa-copy"></i> Copy Joke
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div class="error-state" id="errorState">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Oops! Couldn't fetch a joke</h3>
+                <p>Check your internet connection and try again</p>
+                <button class="retry-btn" id="retryBtn">Try Again</button>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="primary-btn" id="getJokeBtn">
+                    <i class="fas fa-redo"></i> Get New Joke
+                </button>
+                
+                <div class="category-selector">
+                    <label for="category">Joke Category:</label>
+                    <select id="category">
+                        <option value="any">Any Category</option>
+                        <option value="programming">Programming</option>
+                        <option value="pun">Pun</option>
+                        <option value="spooky">Spooky</option>
+                        <option value="christmas">Christmas</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Joke Statistics -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="jokeCount">0</span>
+                    <span class="stat-label">Jokes Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="categoryCount">0</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <a href="https://jokeapi.dev/" target="_blank">JokeAPI</a> | Made with ❤️ for laughter</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Joke copied to clipboard! 📋</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
